@@ -1,0 +1,59 @@
+V2.0:
+
+Ported application to Rust from C(now compiles using "cargo build").
+Some stability improvements when entering values that are invalid.
+Fixed é characters from printing wrongly on UNIX-like machines.
+
+V1.9:
+
+Removed Code::Blocks configuration files. 
+Fixed description of how to input code for Pokémon Crystal without using a gameshark.
+(Source for new description: http://www.glitchcity.info/wiki/Date_change_exploit)
+
+V1.8:
+
+Fixed some instabilities, when using long character name.
+Fixed crash when entering a name containing a space.
+Fixed buffer overflow when entering a name.
+Removed calculatelettervalue function, since it was obsolete.
+Removed c++ dependant libraries and functions and made the project a c project.
+
+V1.7:
+
+Converted project file to a CodeBlocks project file instead of Visual Studio.
+Changed intro text to explain how to enter code insertion dialog in Pokémon Silver and Gold.
+Optimization of letter value generation.
+Overhaul of variable names.
+Created TODO list.
+Made code more clean to look at. (still much to be done.)
+
+V1.6:
+
+Fixed a bug causing codes made with more money than 131070 to not work.
+
+V1.5:
+
+The software is able to receive arguments in order [Name, ID, Money].
+
+V1.4:
+
+Fixed a bug introduced with V1.3 which rendered all special letters unuseable.
+
+V1.3:
+
+optimizations.
+
+V1.2:
+
+Fixed a bug if you used the character * in a name
+the software would not recognise it.
+
+Minor optimizations.
+
+V1.1:
+
+Minor optimizations.
+
+V1.0:
+
+First version of the software done.
