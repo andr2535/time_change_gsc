@@ -1,6 +1,7 @@
 [package]
-name = "time_change"
+name = "time_change_gsc"
 version = "2.0.0"
 authors = ["andreas"]
+edition = "2018"
 
 [dependencies]

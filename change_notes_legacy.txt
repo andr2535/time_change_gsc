@@ -1,3 +1,5 @@
+Changelog, up until the project began using git:
+
 V2.0:
 
 Ported application to Rust from C(now compiles using "cargo build").
