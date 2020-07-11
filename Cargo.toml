@@ -1,7 +1,9 @@
 [package]
 name = "time_change_gsc"
 version = "2.0.0"
-authors = ["andreas"]
+authors = ["Andreas Ejdesgaard <andreasejdesgaard@protonmail.com>"]
 edition = "2018"
+license = "GPL-3.0-or-later"
+readme = "README.md"
 
 [dependencies]
