@@ -17,7 +17,7 @@
 
 use std::io;
 
-fn poke_char_value(letter:char) -> u16 {
+fn poke_char_value(letter: char) -> u16 {
 	match letter {
 		' ' => 0x7F,'!' => 0xE7,'(' => 0x9A,')' => 0x9B, '*' => 0xF1,',' => 0xF4,'-' => 0xE3,'.' => 0xE8,
 		'/' => 0xF3,':' => 0x9C,';' => 0x9D,'<' => 0xE1, '>' => 0xE2,'?' => 0xE6,'A' => 0x80,'B' => 0x81,
@@ -31,27 +31,26 @@ fn poke_char_value(letter:char) -> u16 {
 	}
 }
 
-fn calculate_name_value(name:&str) -> u16 {
+fn calculate_name_value(name: &str) -> u16 {
 	name.chars().take(5).take_while(|ch| *ch != '\n')
 	    .fold(0u16, |acc, letter| acc + poke_char_value(letter))
 }
 
-fn calculate_id_or_money(question:&str) -> u16 {
+fn calculate_id_or_money(question: &str) -> u16 {
 	let stdin = io::stdin();
-	let input_string = &mut String::new();
+	let mut input_string = String::new();
 
 	loop {
-		println!("{}",question);
+		println!("{}", question);
 		input_string.clear(); // Zero String.
-		stdin.read_line(input_string)
+		stdin.read_line(&mut input_string)
 		    .expect("error getting input_string");
 		input_string.pop(); // Remove endline char.
 
-		let parsed_value = input_string.parse::<u32>();
-		match parsed_value {
+		match input_string.parse::<u32>() {
 			Ok(value) => {
-				let reduced_value:u16 = (value%65535) as u16;
-				return (reduced_value/256)+(reduced_value%256);
+				let reduced_value:u16 = (value % 65535) as u16;
+				return (reduced_value / 256) + (reduced_value % 256);
 			},
 			Err(error) => println!("There was an error parsing value, verify \
 			                        that you only typed in numbers. \nerror = {}", error)
@@ -78,7 +77,7 @@ fn main() {
 	    for characters PK you should type < for MN type >.\n");
 
 	println!("Enter your character name here");
-	input_string.clear(); // Zero String.
+	input_string.clear();
 	stdin.read_line(input_string)
 	    .expect("Failed to get character name");
 	time_change_value += calculate_name_value(input_string);
